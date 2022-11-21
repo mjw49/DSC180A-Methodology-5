@@ -1,0 +1,4 @@
+{
+    "dockerhub-id": "m7wilson/k-clusters",
+    "build-script": "python run.py"
+}
