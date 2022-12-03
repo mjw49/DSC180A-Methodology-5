@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
-import numpy as np
+import sys
+import json
 
-from src import k_clusters
+from src import motif_algorithm
 
 def main(targets):
-    if 'data' in targets:
-        with open('config/k-clusters-params.json') as fh:
+    if 'test' in targets:
+        with open('config/motif-algorithm-params.json') as fh:
             data_params = json.load(fh)
-        k_clusters(**data_params)
+        run_algorithm(**data_params)
 
 if __name__ == '__main__':
     targets = sys.argv[1:]

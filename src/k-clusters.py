@@ -1,20 +1,15 @@
 from sklearn.cluster import KMeans
 
-def k_clusters(fp, k):
+def k_clusters(W, k):
     '''
     Input: motif adjacency matrix (W), k (number of clusters)
     Output: a dictionary mapping each node i to its assigned cluster
     '''
 
-    # Step 0: Read in file to create Adjacency Matrix W
-    # -----------------------------------------
-    # read in file
-    adj_matrix = np.genfromtxt(fp, delimiter=',')
-
     # Step 1: Form the Diagonal Matrix (D) from W
     # -----------------------------------------
     # obtain the sums of all the rows of W
-    row_sums = np.sum(adj_matrix, axis = 1)
+    row_sums = np.sum(W, axis = 1)
     
     # calculate D (to the -1/2 power) utilizing the row sums
     D = np.diag(row_sums**(-1/2))
